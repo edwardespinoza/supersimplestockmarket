@@ -21,15 +21,20 @@ I am including several JUnit Tests for the five calculations. You can use < mvn 
 
 ##Comments
 It is a Maven project, and I am trying to implement an extensive use of Java 8 (streams and lambda expressions) and there are few frameworks used in this solution (Junit, Log4J, Apache Math3).
+
 Several JUnits are included in order to test the main 'processor' classes. It is possible to run using the TestSuite class AllTests.java.
 
 ##Detailed description
 To run using an IDE, you have to specify the conf/config.properties file, if not the app will assign you the default one.
 
 After the execute the AppSuperSimpleStocks class a menu will appear:
+
 > For number 1 & 2, you have to specify stockSymbol and price
+
 > Number 3 is loading trades from the data/trades.csv file
+
 > Number 4 is mandatory to run number 3
+
 > Number 5 is mandatory to run number 4
 
 ```
@@ -46,7 +51,9 @@ After the execute the AppSuperSimpleStocks class a menu will appear:
 
 ##How to run from command windows
   You can use this command :
+```  
   java -cp "stock.jar;lib/*" com.jpmorgan.supersimplestocks.AppSuperSimpleStocks conf/config.properties
+```
 
 ##Libraries and framework
 - Java 8
