@@ -31,7 +31,6 @@ public class SuperSimpleStockFacade {
 		boolean ok = false;
 		if (trades != null)	{
 			trades.forEach(trade -> trProcess.recordTrade(trade, db));
-			System.out.println("\nTrades Saved");
 			ok = true;
 		}else{
 			throw new TradeListEmptyException();

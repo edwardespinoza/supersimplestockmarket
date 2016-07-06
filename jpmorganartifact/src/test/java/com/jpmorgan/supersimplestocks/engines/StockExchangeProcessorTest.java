@@ -13,7 +13,7 @@ import com.jpmorgan.supersimplestocks.enums.StockTypes;
 import com.jpmorgan.supersimplestocks.vos.StockExchangeVO;
 
 
-public class StreamProcessorTest {
+public class StockExchangeProcessorTest {
 
 //	private static final double DELTA = 1e-15d;
 	

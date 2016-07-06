@@ -74,14 +74,14 @@ public class AppSuperSimpleStocks {
 			int choice = menu();
 			switch (choice) {
 			case 1:
-				System.out.println(callCalculateDividendYield());
+				callCalculateDividendYield();
 				break;
 			case 2:
-				System.out.println(callCalculatePERatio());
+				callCalculatePERatio();
 				break;
 			case 3:
 				case3selected = true;
-				System.out.println(callRecordTrade(context.getString("FILENAME_TRADES")));
+				callRecordTrade(context.getString("FILENAME_TRADES"));
 				break;
 			case 4:
 				if (case3selected == false) {
@@ -118,7 +118,7 @@ public class AppSuperSimpleStocks {
 		int selection;
 
 		System.out.println("         Menu");
-		System.out.println("-----------------------\n");
+		System.out.println("------------------------------------\n");
 		System.out.println("1 - Calculate Dividend Yield" + "(Using file data/DailyStockExchange.csv)");
 		System.out.println("2 - Calculate the P/E Ratio" + "(Using file data/DailyStockExchange.csv)");
 		System.out.println("3 - Record a trade from csv file " + "(Using file data/trades.csv)");
@@ -131,44 +131,49 @@ public class AppSuperSimpleStocks {
 		return selection;
 	}
 		
-	public static String callCalculateDividendYield() {
+	public static void callCalculateDividendYield() {
 
 		double price;
 		String stockSymbol;
 
-		System.out.print("INSERT STOCK SYMBOL: ");
+		System.out.print("INSERT STOCK SYMBOL : ");
 		stockSymbol = input.next();
-		System.out.print("INSERT THE PRICE: ");
+		System.out.print("INSERT THE PRICE (DOUBLE FORMAT -> 9.9 ): ");
 		price = input.nextDouble();
 		
 		if (price > 0.0){
 			StockExchangeVO seVO = context.getStockExchange().get(stockSymbol);
-			if (seVO == null) return "\nERROR: StockSymbol has not been found.";
-			return "\nDividend Yield is -> " + String.valueOf(SuperSimpleStockFacade.callCalculateDividendYield(price, seVO));
+			if (seVO == null) logger.error("\nERROR: StockSymbol has not been found.");
+			System.out.println("\n------------------------------------");
+			System.out.println("\nDividend Yield is -> " + String.valueOf(SuperSimpleStockFacade.callCalculateDividendYield(price, seVO)));
+			System.out.println("\n------------------------------------");
 		}
 		else{
-			return "\n\nERROR: Price must be greater than Zero.";
+			logger.error("\n\nERROR: Price must be greater than Zero.");
 		}
 		
 	}
 	
-	public static String callCalculatePERatio() {
+	public static void callCalculatePERatio() {
 
 		double price;
 		String stockSymbol;
 
-		System.out.print("INSERT STOCK SYMBOL: ");
+		System.out.print("INSERT STOCK SYMBOL : ");
 		stockSymbol = input.next();
-		System.out.print("INSERT THE PRICE: ");
+		System.out.print("INSERT THE PRICE (DOUBLE FORMAT -> 9.9 ): ");
 		price = input.nextDouble();
 		
 		if (price > 0.0){
 			StockExchangeVO seVO = context.getStockExchange().get(stockSymbol);
-			if (seVO == null) return "\nERROR: StockSymbol has not been found.";
-			return "\nP/E Ratio is -> " + String.valueOf(SuperSimpleStockFacade.callCalculatePERatio(price, seVO));
+			if (seVO == null) 
+				logger.error("\nERROR: StockSymbol has not been found.");
+			System.out.println("\n------------------------------------");
+			System.out.println("\nP/E Ratio is -> " + String.valueOf(SuperSimpleStockFacade.callCalculatePERatio(price, seVO)));
+			System.out.println("\n------------------------------------");
 		}
 		else{
-			return "\nERROR: Price must be greater than Zero.";
+			logger.error("\nERROR: Price must be greater than Zero.");
 		}
 		
 	}
@@ -184,6 +189,11 @@ public class AppSuperSimpleStocks {
 			System.out.println("\nTRADES TO SAVE: ");
 			if (trades != null)	trades.forEach(trade -> System.out.println(trade));
 			ok = SuperSimpleStockFacade.callRecordTrades(trades, AppSuperSimpleStocks.context.getDatabase());
+			if (ok){
+				System.out.println("\n------------------------------------");
+				System.out.println("\nTrades Saved");
+				System.out.println("\n------------------------------------");
+			}
 		} catch (NumberFormatException e) {
 			logger.error(e.getMessage());
 		} catch (IOException e) {
@@ -205,13 +215,13 @@ public class AppSuperSimpleStocks {
 		
 		mapVWSP = SuperSimpleStockFacade.callCalculateVolumneWeightedStockPrice(context.getStockExchange(), context.getDatabase().getTrades(), seconds);
 		System.out.println("");
-		
+		System.out.println("\n------------------------------------");
 		if (mapVWSP != null){
 			mapVWSP.forEach((k,v)->{
 				System.out.println("STOCK_SYMBOL : " + k + " VWSP : " + v.returnVWSP());	
 			});
 		}
-		
+		System.out.println("\n------------------------------------");
 		AppSuperSimpleStocks.context.setMapVWSP(mapVWSP);
 		return ;
 	}
@@ -219,7 +229,9 @@ public class AppSuperSimpleStocks {
 	public static void callCalculateGBCEAllShareIndex() {
 		double result;
 		result = SuperSimpleStockFacade.callCalculateGBCEAllShareIndex(AppSuperSimpleStocks.context.getMapVWSP());
-		System.out.println("\nGBCEAllShareIndex is -> " + result);
+		System.out.println("\n------------------------------------");
+		System.out.println("GBCEAllShareIndex is -> " + result);
+		System.out.println("\n------------------------------------");
 	}
 
 }

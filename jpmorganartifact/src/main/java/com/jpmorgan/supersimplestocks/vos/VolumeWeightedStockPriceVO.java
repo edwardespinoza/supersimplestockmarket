@@ -4,11 +4,25 @@ public class VolumeWeightedStockPriceVO {
 
 	protected String stockSymbol;
 	protected int sumQuantity = 0;
-
 	protected double sumPrice = 0.0;
-	
 	protected double sumQuantityxPrice = 0.0; 
-
+	
+	public VolumeWeightedStockPriceVO(){
+		
+	}
+	
+	public VolumeWeightedStockPriceVO(int sumQuantity, double sumQuantityxPrice){
+		this.sumQuantity = sumQuantity;
+		this.sumQuantityxPrice = sumQuantityxPrice;
+	}
+	
+	public void setSumQuantity(int sumQuantity) {
+		this.sumQuantity = sumQuantity;
+	}
+	public void setSumQuantityxPrice(double sumQuantityxPrice) {
+		this.sumQuantityxPrice = sumQuantityxPrice;
+	}
+	
 	public int getSumQuantity() {
 		return sumQuantity;
 	}

@@ -1,5 +1,7 @@
 package com.jpmorgan.supersimplestocks.engines;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,12 +49,21 @@ public class TradeProcessor {
 	
 	public double calculateGBCEAllShareIndex (Map<String, VolumeWeightedStockPriceVO> mapVWSP){
 		double result = 0;
-		double[] arrayOfPrices = new double[mapVWSP.size()];
+//		double[] arrayOfPrices = new double[mapVWSP.size()];
+		
+		List<Double> list = new ArrayList<Double>();
+		
 		mapVWSP.forEach((k,v) -> {
-			
+			list.add(v.returnVWSP());
 		});
-		result = StatUtils.geometricMean(arrayOfPrices);
+		Double[] arrayOfPrices = list.stream().toArray(size -> new Double[size]);
+		
+		double[] primitiveArrayPrices = Arrays.stream(arrayOfPrices).mapToDouble(Double::doubleValue).toArray();
+		
+		result = StatUtils.geometricMean(primitiveArrayPrices);
+		
 		return result;
+		
 	}
 	
 	
