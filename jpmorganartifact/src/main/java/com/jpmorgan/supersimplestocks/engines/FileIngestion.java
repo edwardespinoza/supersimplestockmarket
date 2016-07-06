@@ -33,8 +33,9 @@ public class FileIngestion {
 	
 	public static List<TradeVO> getListFromCSV(final String filename, int limit) throws IOException {
 		
-		Stream stream = getStream(filename);
-		List<TradeVO> list = (List)stream.map(mapToTradeVO).limit(limit).collect(Collectors.toList());
+		Stream<String> stream = getStream(filename);
+		List<TradeVO> collect = (List<TradeVO>)stream.map(mapToTradeVO).limit(limit).collect(Collectors.toList());
+		List<TradeVO> list = collect;
 		return list;
 	}
 	
