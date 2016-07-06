@@ -17,7 +17,7 @@ It is an app building a menu using the Java console, uploading to cache a stockE
 
 We can get any calculation using a Facade class which is calling  several methods from 2 main classes (TradeProcessor and StockExchangeProcessor)
 
-I can using Eclipse and you can upload to this IDE directly using the metadata uploaded.
+I am using Eclipse and you can upload to this IDE directly using the metadata uploaded.
 
 ##Data
 I am including several JUnit Tests for the five calculations. You can use < mvn clean test > from any IDE with the maven plugin or other test tool app such as Selenium or the Maven client tool.
