@@ -1,0 +1,16 @@
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\AppSuperSimpleStocks.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\persistence\Database.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\engines\TradeProcessor.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\Context.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\beans\StockExchangeVO.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\beans\StockTypes.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\referencedata\Constants.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\beans\TradeVO.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\businessexceptions\TradeListEmptyException.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\engines\StockExchangeProcess.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\beans\Currencies.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\engines\FileIngestion.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\beans\PositionVO.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\SuperSimpleStockFacade.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\engines\StreamProcessor.java
+C:\EclipseWorkspaces\jpmorganartifact\src\main\java\com\jpmorgan\supersimplestocks\ReadConsole.java
