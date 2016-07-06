@@ -13,8 +13,11 @@
   2. Calculate the GBCE All Share Index using the geometric mean of the Volume Weighted Stock Price for all
 
 ##Solution
-It is an app, building a menu using the Java console, uploading to cache a stockExchange values from a file (data/DailyStockExchange.csv). The same as contained in the example.
+It is an app building a menu using the Java console, uploading to cache a stockExchange values from a file (data/DailyStockExchange.csv). The same as contained in the example.
+
 We can get any calculation using a Facade class which is calling  several methods from 2 main classes (TradeProcessor and StockExchangeProcessor)
+
+I can using Eclipse and you can upload to this IDE directly using the metadata uploaded.
 
 ##Data
 I am including several JUnit Tests for the five calculations. You can use < mvn clean test > from any IDE with the maven plugin or other test tool app such as Selenium or the Maven client tool.
