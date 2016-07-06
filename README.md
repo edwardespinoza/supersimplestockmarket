@@ -1,4 +1,4 @@
-# Assignment – Super Simple Stock Market
+# Super Simple Stock Market
 
 ##Requirements
 1. The Global Beverage Corporation Exchange is a new stock market trading in drinks companies.
